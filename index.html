@@ -188,7 +188,11 @@
     <script>
         document.getElementById('toggle-contact').addEventListener('click', function () {
             var contactInfo = document.getElementById('contact');
-            contactInfo.style.display = (contactInfo.style.display === 'block') ? 'none' : 'block';
+            if (contactInfo.style.display === 'block') {
+                contactInfo.style.display = 'none'; // Hide contact info if it's already visible
+            } else {
+                contactInfo.style.display = 'block'; // Show contact info if it's hidden
+            }
         });
     </script>
 </body>
