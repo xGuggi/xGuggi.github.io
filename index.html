@@ -10,7 +10,17 @@
     <style>
         /* Your custom styles can go here */
         /* Reset default styles */
-        body, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        ul,
+        ol,
+        li {
             margin: 0;
             padding: 0;
         }
@@ -73,13 +83,44 @@
         .project a:hover {
             text-decoration: underline;
         }
+
+        header {
+            position: relative;
+        }
+
+        h1 {
+            display: inline-block;
+        }
+
+        #toggle-contact {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+
+        .contact-info {
+            margin-right: auto;
+            /* This line should be inside the <style> tag or CSS file */
+        }
     </style>
 </head>
 
 <body>
     <header>
         <h1>My GitHub Portfolio</h1>
+        <button id="toggle-contact" class="btn btn-primary">Contact Info</button>
+        <div id="contact" class="contact-info">
+            <h2>Contact Information</h2>
+            <ul class="list-unstyled">
+                <li>Email: spencerguggisberg3@gmail.com</li>
+                <li>Phone: (801) 628-7837</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/spencer-guggisberg">LinkedIn Profile</a></li>
+                <!-- Add any other contact methods you prefer -->
+            </ul>
+        </div>
     </header>
+
     <div class="container">
         <div class="project">
             <h2>Project 1: Banking App</h2>
@@ -89,23 +130,27 @@
                 Your browser does not support the video tag.
             </video>
             <p><strong>Technologies Used:</strong>
-                <ul>
-                    <li>Express.js</li>
-                    <li>Node.js</li>
-                    <li>MongoDB</li>
-                    <li>Session Management</li>
-                    <li>Hashing</li>
-                    <li>React.js</li>
-                    <li>Routing</li>
-                </ul></p>
-            <p><strong>Technical Challenges:</strong><br> Our software engineering team had difficulties connecting sessions for each individual user.<br>
-                 Another difficulty was using CORS to create user authentication. </p>
-            <p><strong>My Contributions:</strong><br> My contributions included helping with the backend banking routing used to get the history and account type.<br>
-                 I also helped with the history component on the frontend which included the user interface as well as the functionality. </p>
+            <ul>
+                <li>Express.js</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+                <li>Session Management</li>
+                <li>Hashing</li>
+                <li>React.js</li>
+                <li>Routing</li>
+            </ul>
+            </p>
+            <p><strong>Technical Challenges:</strong><br> Our software engineering team had difficulties connecting
+                sessions for each individual user.<br>
+                Another difficulty was using CORS to create user authentication. </p>
+            <p><strong>My Contributions:</strong><br> My contributions included helping with the backend banking routing
+                used to get the history and account type.<br>
+                I also helped with the history component on the frontend which included the user interface as well as
+                the functionality. </p>
             <p><strong>Link to the project's GitHub repository:</strong>
-             <button type="button" class="btn btn-primary">
-                <a href="https://github.com/JoelSFar/CS3750.git" class="text-white">View Code</a>
-            </button>
+                <button type="button" class="btn btn-primary">
+                    <a href="https://github.com/JoelSFar/CS3750.git" class="text-white">View Code</a>
+                </button>
             </p>
         </div>
         <div class="project">
@@ -116,37 +161,36 @@
                 Your browser does not support the video tag.
             </video>
             <p><strong>Technologies Used:</strong>
-                <ul>
-                    <li>Express.js</li>
-                    <li>Node.js</li>
-                    <li>MongoDB</li>
-                    <li>React.js</li>
-                    <li>Preact Hooks</li>
-                    <li>SVGs</li>
-                    <li>Routing</li>
-                </ul></p>
-            <p><strong>Technical Challenges:</strong><br> Our software engineering team had difficulties with the SVG functionality and animations.<br>
-                 Another difficulty was getting the correct word to pop up at the end if the user did not win. </p>
-            <p><strong>My Contributions:</strong><br> My contributions included creating the front end functionality for handling the high scores.<br>
-                 I also helped with backend routes which included the getHighScores and setHighScores routes. </p>
+            <ul>
+                <li>Express.js</li>
+                <li>Node.js</li>
+                <li>MongoDB</li>
+                <li>React.js</li>
+                <li>Preact Hooks</li>
+                <li>SVGs</li>
+                <li>Routing</li>
+            </ul>
+            </p>
+            <p><strong>Technical Challenges:</strong><br> Our software engineering team had difficulties with the SVG
+                functionality and animations.<br>
+                Another difficulty was getting the correct word to pop up at the end if the user did not win. </p>
+            <p><strong>My Contributions:</strong><br> My contributions included creating the front end functionality for
+                handling the high scores.<br>
+                I also helped with backend routes which included the getHighScores and setHighScores routes. </p>
             <p><strong>Link to the project's GitHub repository:</strong>
-             <button type="button" class="btn btn-primary">
-                <a href="https://github.com/mynamejoshua/hangman.git" class="text-white">View Code</a>
-            </button>
+                <button type="button" class="btn btn-primary">
+                    <a href="https://github.com/mynamejoshua/hangman.git" class="text-white">View Code</a>
+                </button>
             </p>
         </div>
-        <section id="contact" class="mt-5">
-            <h2>Contact Information</h2>
-            <p>You can reach me via the following methods:</p>
-            <ul class="list-unstyled">
-                <li>Email: spencerguggisberg3@gmail.com</li>
-                <li>Phone: (801) 628-7837</li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/spencer-guggisberg">LinkedIn Profile</a></li>
-                <!-- Add any other contact methods you prefer -->
-            </ul>
-        </section>
         <!-- Add more project sections as needed -->
     </div>
+    <script>
+        document.getElementById('toggle-contact').addEventListener('click', function () {
+            var contactInfo = document.getElementById('contact');
+            contactInfo.style.display = (contactInfo.style.display === 'block') ? 'none' : 'block';
+        });
+    </script>
 </body>
 
 </html>
